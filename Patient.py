@@ -1,8 +1,8 @@
 class Patient:
     def __init__(self, name, age, priority):
-        name = name
-        age = age
-        priority = priority
+        self._name = name
+        self._age = age
+        self._priority = priority
     
     @property
     def name(self):
