@@ -1,7 +1,8 @@
 import unittest
+import random
 from Patient import Patient
 from PatientGenerator import patient_generator
-import random
+from PatientQueue import PatientQueue
 
 class PatientTests(unittest.TestCase): 
     def setUp(self):
@@ -25,6 +26,14 @@ class PatientTests(unittest.TestCase):
     def test_patient_age(self):
         random_patient_age = self.patients[random.randint(0, 9)].age
         self.assertIsInstance(random_patient_age, int)
+
+class PatientQueueTests(unittest.TestCase):
+    def setUp(self):
+        self.patients_queue = PatientQueue()
+    
+    def test_patients_heap_transformation(self):
+        self.assertEqual(10, len(self.patients_queue.patients))
+
 
 if __name__ == "__main__":
     unittest.main()
