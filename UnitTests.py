@@ -33,6 +33,13 @@ class PatientQueueTests(unittest.TestCase):
     
     def test_patients_heap_transformation(self):
         self.assertEqual(10, len(self.patients_queue.patients))
+    
+    def test_patients_heap_order(self):
+        for index in range(1, len(patient_generator(10)), 1):
+            patient: Patient = self.patients_queue.patients[index]
+            parentNode: Patient = self.patients_queue.patients[(index - 1) // 2]
+            
+            self.assertTrue(patient.priority >= parentNode.priority)
 
 
 if __name__ == "__main__":
