@@ -4,6 +4,10 @@ class Patient:
         self._age = age
         self._priority = priority
     
+    ##Override this method allow to compare values with self.priority attribute
+    def __lt__(self, other):
+        return self.priority < other.priority
+
     @property
     def name(self):
         return self._name
