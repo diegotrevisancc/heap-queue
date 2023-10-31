@@ -36,6 +36,12 @@ class PatientQueueTests(unittest.TestCase):
     
     def test_add_patient(self):
         self.patients_queue.add_patient(Patient("Diego Trevisan", 22, 8))
+        self.assertEqual(11, len(self.patients_queue.patients))
+    
+    def test_attend_highest_priority_patient(self):
+        initialLength = len(self.patients_queue.patients)
+        self.patients_queue.attend_highest_priority_patient()
+        self.assertTrue(initialLength > len(self.patients_queue.patients))
 
     def test_patients_heap_order(self):
         for index in range(1, len(patient_generator(10)), 1):
