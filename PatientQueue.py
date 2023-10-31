@@ -6,4 +6,7 @@ class PatientQueue:
         self.patients = patient_generator(10)
         heapq.heapify(self.patients)
         self.attended_patients = []
+    
+    def add_patient(self, patient):
+        heapq.heappush(self.patients, patient)
 

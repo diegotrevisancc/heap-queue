@@ -34,6 +34,9 @@ class PatientQueueTests(unittest.TestCase):
     def test_patients_heap_transformation(self):
         self.assertEqual(10, len(self.patients_queue.patients))
     
+    def test_add_patient(self):
+        self.patients_queue.add_patient(Patient("Diego Trevisan", 22, 8))
+
     def test_patients_heap_order(self):
         for index in range(1, len(patient_generator(10)), 1):
             patient: Patient = self.patients_queue.patients[index]
