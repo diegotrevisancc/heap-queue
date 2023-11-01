@@ -44,7 +44,7 @@ class PatientQueueTests(unittest.TestCase):
         self.assertTrue(initialLength > len(self.patients_queue.patients))
 
     def test_patients_heap_order(self):
-        for index in range(1, len(patient_generator(10)), 1):
+        for index in range(1, len(self.patients_queue._patients), 1):
             patient: Patient = self.patients_queue.patients[index]
             parentNode: Patient = self.patients_queue.patients[(index - 1) // 2]
             

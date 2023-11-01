@@ -39,12 +39,17 @@ def attentPatientView(patient_queue: PatientQueue):
 def showLastFiveView(patient_queue: PatientQueue):
     print("----------------")
     print("This is the last five attended patients")
+    counter = 0
     for patient in patient_queue._attended_patients:
         print("*******************")
         print("Name: ", patient.name)
         print("Age: ", patient.age, " years old")
         print("Priority: ", patient.priority)
         print("*******************")
+        counter +=1
+        if (counter == 5):
+            break
+        
     input("Press enter to continue")
         
 
